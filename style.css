@@ -1,27 +1,511 @@
+/* Hover effect for Packages and Away Games cards */
+.packages .card,
+.awaygames .card {
+  transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+  box-shadow: rgba(36, 79, 197, 0.08) 0px 4px 16px;
+  cursor: pointer;
+}
+.packages .card:hover,
+.awaygames .card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 32px rgba(36, 79, 197, 0.18), 0 1.5px 8px rgba(0,0,0,0.10);
+  z-index: 2;
+}
+.packages .card:hover .card-body h3,
+.awaygames .card:hover .card-body h3 {
+  color: #244fc5;
+  font-size: 1.45em;
+  letter-spacing: 1.5px;
+  transition: color 0.2s, font-size 0.2s, letter-spacing 0.2s;
+}
+.packages .card:hover .card-body p,
+.awaygames .card:hover .card-body p {
+  color: #222;
+  font-size: 1.15em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.2s, font-size 0.2s, font-weight 0.2s, letter-spacing 0.2s;
+}
+.packages .card:hover .package-icon,
+.awaygames .card:hover i.fa-solid,
+.awaygames .card:hover i.fas {
+  color: #244fc5;
+  filter: drop-shadow(0 2px 8px #a9c7f7);
+  transition: color 0.2s, filter 0.2s;
+}
+/* Make package icons larger in the Packages section */
+.package-icon {
+  font-size: 3.5rem !important;
+  color: #244fc5 !important;
+  margin-bottom: 12px;
+  display: block;
+}
+#footer h1 {
+    background: linear-gradient(90deg, #244fc5 60%, #000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+#footer .contact-phone {
+    color: #111;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
-  margin: 0;
-  padding: 0;
+    background: #e6f0fa !important;
+}
+/* Contact Us section custom styles */
+#footer {
+    background: linear-gradient(135deg, #244fc5 60%, #000 100%);
+    color: #244fc5;
+}
+#footer h1, #footer h1 span {
+    color: #fff;
+    text-shadow: 0 2px 8px #000a;
+}
+#footer p, #footer .copyright p {
+    color: #fff;
+}
+#footer .social-links i {
+    background: #000;
+    color: #244fc5;
+}
+#footer .social-links i:hover {
+    background: #244fc5;
+    color: #fff;
+}
+/* Set the home section background to the provided team image */
+.home {
+    background: url('team-photo.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    position: relative;
+}
+/* Make the main home section p bigger already, now make the packages card-body p bigger */
+.packages .card-body p {
+    font-size: 22px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Lato', sans-serif;
 }
 
-header {
-  background-color: #004080;
-  color: white;
-  padding: 20px;
-  text-align: center;
+/* Navbar Start */
+#navbar{
+    background: #f9f9f9;
+}
+#logo{
+    font-size: 40px;
+    font-weight: 550;
+    color: black;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 5px;
+}
+#logo span{
+    color: #244fc5;
 }
 
-main {
-  padding: 20px;
+/* Use the same blue as #logo span for all previously orange text */
+.main-text h1 span,
+.main-txt h1 span,
+.checked,
+.star i,
+#about-btn,
+#about-btn:hover,
+#navbar form button,
+.home .content a:hover,
+.nav-item .nav-link:hover,
+.packages .card .card-body a,
+.social-links i:hover {
+    color: #244fc5 !important;
+    background: none !important;
+    border: none !important;
 }
 
-section {
-  margin-bottom: 30px;
+#about-btn,
+.packages .card .card-body a,
+#navbar form button,
+.home .content a {
+    background: #244fc5 !important;
+    color: white !important;
 }
+.navbar-toggler span{
+    color: #ffa500;
+}
+.navbar-nav{
+    margin-left: 20px;
+}
+.nav-item .nav-link{
+    font-size: 14px;
+    font-weight: 550;
+    color: black;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.5s ease;
+}
+.nav-item{
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: center;
+}
+.nav-item .nav-link:hover{
+    background: #ffa500;
+    color: white;
+}
+#navbar form button{
+    background: orange;
+    color: white;
+    border: none;
+}
+/* Navbar End */
 
-footer {
-  background-color: #ddd;
-  text-align: center;
-  padding: 10px;
+/* Home Section Start */
+.home{
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url(./images/background2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+.home .content{
+    text-align: center;
+    padding-top: 200px;
+}
+.home .content h5{
+    color: white;
+    font-size: 60px;
+    font-weight: 550;
+    text-shadow: 0px 1px 1px black;
+}
+.home .content h1{
+    color: white;
+    font-size: 100px;
+    font-weight: 550;
+    text-shadow: 0px 1px 1px black;
+    margin-top: 5px;
+}
+.changecontent::after{
+    content: ' ';
+    color: #ffa500;
+    text-shadow: 0px 1px 1px black;
+    animation: changetext 10s infinite linear;
+}
+@keyframes changetext{
+    0%{content: "France";}
+    10%{content: "Spain";}
+    20%{content: "United States";}
+    30%{content: "China";}
+    40%{content: "India";}
+    50%{content: "Pakistan";}
+    60%{content: "Italy";}
+    70%{content: "Turkey";}
+    80%{content: "Mexico";}
+    90%{content: "Germany";}
+    100%{content: "United kingdom";}
+} 
+.home .content p{
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+.home .content a{
+    padding: 10px;
+    background: white;
+    color: black;
+    letter-spacing: 2px;
+    font-weight: 550;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.home .content a:hover{
+    background: #ffa500;
+    color: white;
+}
+@media (max-width:850px){
+    .home{
+        background-position: 50%;
+    }
+}
+@media (max-width:450px){
+    .home .content h5{
+        font-size: 25px;
+    }
+    .home .content h1{
+        font-size: 38px;
+    }
+    .home .content p{
+        font-size: 13px;
+    }
+}
+/* Home Section End */
+
+/* Section Book Start */
+.book{
+    background: #e6f0fa;
+    padding: 50px;
+}
+.main-text h1{
+    text-align: center;
+    text-shadow: 0px 1px 1px black;
+    font-weight: 600;
+}
+.main-text h1 span{
+    color: #ffa500;
+}
+.book .card{
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px -6px black;
+}
+.book .row{
+    margin-top: 30px;
+}
+.book form input{
+    padding: 10px;
+    color: black;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px -6px black;
+}
+.book form textarea{
+    border: none;
+    border-radius: 10px;
+    resize: none;
+    box-shadow: 0px 5px 5px -6px black;
+    height: 200px;
+}
+.book .submit{
+    width: 160px;
+    font-size: 16px;
+    font-weight: 550;
+    background: #5a0fe7;
+    color: white;
+    margin-top: 10px;
+    transition: 0.5s;
+}
+.book .submit:hover{
+    width: 170px;
+}
+@media (max-width:765px){
+    .book{
+        padding: 0;
+    }
+    .main-text h1{
+        padding: 20px;
+    }
+}
+/* Section Book End */
+
+
+
+
+
+/* Section Packages Start */
+.main-txt h1{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px black;
+}
+.main-txt h1 span{
+    color: #ffa500;
+}
+.packages .card{
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+}
+.packages .card img{
+    border-radius: 5px;
+}
+.packages .card .card-body{
+    background: transparent;
+}
+.packages .card .card-body h3{
+    font-size: 25px;
+    font-weight: 600;
+}
+.packages .card .card-body p{
+    font-size: 15px;
+}
+.checked{
+    color: #ffa500;
+}
+.star i{
+    font-size: 15px;
+}
+.packages .card .card-body h6{
+    font-size: 20px;
+}
+.packages .card .card-body a{
+    padding: 10px;
+    text-decoration: none;
+    background: #ffa500;
+    color: white;
+    border-radius: 5px;
+}
+/* Section Packages End */
+
+
+
+
+/* Section Services Start */
+.services{
+    background: #f9f9f9;
+    margin-top: 50px;
+}
+.services .card{
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    border: none;
+    cursor: pointer;
+}
+.services .card i{
+    font-size: 80px;
+    text-align: center;
+    color: #244fc5;
+    margin-top: 20px;
+}
+.services .card .card-body h3{
+    font-weight: 600;
+}
+.services .card .card-body{
+    text-align: center;
+}
+/* Section Services End */
+
+
+
+
+
+/* Section Gallary Start */
+.gallary{
+    margin-top: 50px;
+}
+.gallary .card{
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    cursor: pointer;
+    width: 320px;
+    margin: 0 8px 20px 8px;
+/* Make gallery rows flex for tighter card spacing */
+.gallary .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 8px;
+}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gallary .card img{
+    border-radius: 10px;
+    transition: 0.5s;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+.gallary .card img:hover{
+    transform: scale(1.1);
+}
+/* Section Gallary End */
+
+
+
+
+/* About Start */
+.about{
+    padding: 50px;
+    margin-top: 50px;
+    background: #e6f0fa;
+}
+.about .card{
+    border-radius: 10px;
+}
+.about .card img{
+    border-radius: 10px;
+    max-width: 90vw;
+    width: 100%;
+    min-width: 420px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.about h2{
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.about p{
+    font-weight: 500;
+}
+#about-btn{
+    width: 150px;
+    height: 38px;
+    border: none;
+    border-radius: 5px;
+    background: #ffa500;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 550;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#about-btn:hover{
+    width: 170px;
+}
+@media (max-width:765px){
+    .about{
+        padding: 0;
+    }
+}
+/* About End */
+
+
+
+
+/* Footer Start */
+#footer{
+    width: 100%;
+    margin-top: 150px;
+    text-align: center;
+    background: #e6f0fa;
+    color: #244fc5;
+    border-top: 4px solid #244fc5;
+}
+#footer h1{
+    font-weight: 600;
+    padding-top: 30px;
+    color: #244fc5;
+    text-shadow: none;
+}
+#footer h1 span{
+    color: #244fc5;
+}
+.social-links i{
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    background: #244fc5;
+    color: #fff;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.social-links i:hover{
+    background: #111;
+    color: #e6f0fa;
+}
+/* Footer End */
