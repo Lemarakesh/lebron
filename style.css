@@ -56,8 +56,11 @@ html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe U
 @media (max-width:900px){ .video-wrap iframe{height:56vw} }
 
 /* Gallery */
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.gallery-grid img{width:100%;height:180px;object-fit:cover;border-radius:10px;box-shadow:0 6px 22px rgba(2,10,16,0.5)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
+.gallery-grid img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;border-radius:14px;box-shadow:0 8px 32px rgba(2,10,16,0.18);background:#101a24;padding:.5rem;transition:transform .35s cubic-bezier(.23,1.01,.32,1),box-shadow .35s}
+.gallery-grid img:hover{transform:scale(1.07) rotate(-2deg);box-shadow:0 16px 48px #21b2a6cc;filter:brightness(1.05) saturate(1.2)}
+
+@media (max-width:900px){ .gallery-grid{grid-template-columns:1fr} }
 
 /* Form / Buy area */
 .form-grid{display:grid;grid-template-columns:1fr 320px;gap:1.25rem;align-items:start}

@@ -108,9 +108,9 @@
       </header>
 
       <div class="gallery-grid">
-        <img src="images/banner.jpg" alt="Setup 1">
-        <img src="images/pic01.jpg" alt="Setup 2">
-        <img src="images/pic02.jpg" alt="Setup 3">
+        <img src="ChatGPT Image Aug 8, 2025, 02_07_03 PM.png" alt="Setup 1">
+        <img src="ChatGPT Image Aug 8, 2025, 02_14_27 PM.png" alt="Setup 2">
+        <img src="ChatGPT Image Aug 8, 2025, 02_15_02 PM.png" alt="Setup 3">
       </div>
     </div>
   </section>
@@ -172,44 +172,54 @@
 
   <!-- Simple scripts for animations & mailto form -->
   <script>
-    // Show current year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', function() {
+      // Show current year
+      document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Simple reveal-on-scroll
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('visible');
-      });
-    }, {threshold: 0.12});
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+      // Simple reveal-on-scroll
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add('visible');
+        });
+      }, {threshold: 0.12});
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    // Contact form -> open mail client with pre-filled email
-    function openMail(subject, body) {
-      const mail = `mailto:you@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mail;
-    }
+      // Contact form -> open mail client with pre-filled email
+      function openMail(subject, body) {
+        const mail = `mailto:marcos.clancy333@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mail;
+      }
 
-    document.getElementById('contactForm').addEventListener('submit', (ev) => {
-      ev.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const tag  = document.getElementById('tag').value.trim();
-      const msg  = document.getElementById('message').value.trim();
-      const subject = `Build enquiry — ${name}`;
-      const body = `Name: ${name}\nEmail: ${email}\nDiscord/Tag: ${tag}\n\nMessage:\n${msg}`;
-      openMail(subject, body);
-    });
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(ev) {
+          ev.preventDefault();
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const tag  = document.getElementById('tag').value.trim();
+          const msg  = document.getElementById('message').value.trim();
+          const subject = `Build enquiry — ${name}`;
+          const body = `Name: ${name}\nEmail: ${email}\nDiscord/Tag: ${tag}\n\nMessage:\n${msg}`;
+          openMail(subject, body);
+        });
+      }
 
-    document.getElementById('buyQuick').addEventListener('click', () => {
-      const subject = 'Quick buy — Ryzen 5 7500F / RX 6750 XT build';
-      const body = 'I want to buy the starter build. Please send pricing & delivery options.\n\n(Write region and contact details here)';
-      openMail(subject, body);
-    });
+      const buyQuick = document.getElementById('buyQuick');
+      if (buyQuick) {
+        buyQuick.addEventListener('click', function() {
+          const subject = 'Quick buy — Ryzen 5 7500F / RX 6750 XT build';
+          const body = 'I want to buy the starter build. Please send pricing & delivery options.\n\n(Write region and contact details here)';
+          openMail(subject, body);
+        });
+      }
 
-    // Mobile menu toggle (very small)
-    const menuBtn = document.getElementById('menu-btn');
-    menuBtn.addEventListener('click', () => {
-      document.body.classList.toggle('menu-open');
+      // Mobile menu toggle (very small)
+      const menuBtn = document.getElementById('menu-btn');
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
+          document.body.classList.toggle('menu-open');
+        });
+      }
     });
   </script>
 </body>
