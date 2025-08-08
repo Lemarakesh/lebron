@@ -1,135 +1,216 @@
-<!DOCTYPE HTML>
-<!--
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>gaming pc's with Marakesh</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="landing is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fortnite / Valorant Starter PC — PCs with Marakesh</title>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">fortnite kid pc</a></h1>
-						<nav id="nav">
-							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-														<li><a href="index.html">Home</a></li>
-														<li><a href="#partslist">Parts List</a></li>
-														<li><a href="#howtobuild">How to Build</a></li>
-														<li><a href="#buythepc">Buy the PC</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</header>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h2>The PC</h2>
-							<p>the perfect build<br />
-										For future Fortnite pros and beginner PC builders!<br />
-										Built for teens who want to game, stream, and learn.<br />
-										Crafted by <a href="https://www.youtube.com/@METAPCs">PCs with Marakesh</a>.</p>
-<ul class="actions special">
-										<li><a href="#buythepc" class="button primary">Buy Now</a></li>
-										<li><a href="#howtobuild" class="button primary">Build It Yourself</a></li>
-</ul>
-						</div>
-								<a href="#partslist" class="more scrolly">See the Parts List</a>
-					</section>
+  <meta name="description" content="Beginner-friendly gaming PC build for teens — Ryzen 5 7500F + RX 6750 XT. Parts list, gallery, and how-to video.">
+</head>
+<body class="landing">
 
-					<!-- Parts List -->
-					<section id="partslist" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>PC Parts List</h2>
-								<p>Everything you need to build your first gaming PC for Fortnite and more!</p>
-							</header>
-							<table style="margin:0 auto;max-width:600px;background:#222;color:#fff;border-radius:8px;">
-								<thead>
-									<tr><th>Part</th><th>Model</th><th>Why?</th></tr>
-								</thead>
-								<tbody>
-									<tr><td>CPU</td><td>Intel Core i5-12400F</td><td>Great for gaming & streaming</td></tr>
-									<tr><td>GPU</td><td>NVIDIA RTX 3060</td><td>High FPS in Fortnite</td></tr>
-									<tr><td>RAM</td><td>16GB DDR4</td><td>Multitasking & smooth gameplay</td></tr>
-									<tr><td>Storage</td><td>500GB NVMe SSD</td><td>Fast load times</td></tr>
-									<tr><td>Motherboard</td><td>B660M</td><td>Easy to use, reliable</td></tr>
-									<tr><td>Power Supply</td><td>550W 80+ Bronze</td><td>Safe & efficient</td></tr>
-									<tr><td>Case</td><td>Mid Tower RGB</td><td>Looks cool, easy to build in</td></tr>
-								</tbody>
-							</table>
-						</div>
-					</section>
+  <header id="header">
+    <div class="container header-inner">
+      <h1 class="logo"><a href="#banner">Marakesh PCs</a></h1>
 
-					<!-- How to Build -->
-					<section id="howtobuild" class="wrapper alt style2">
-						<div class="inner" style="text-align:center;">
-							<header class="major">
-								<h2>How to Build Your PC</h2>
-								<p>Watch the step-by-step video below (coming soon!)</p>
-							</header>
-							<div style="background:#222;padding:2em;border-radius:12px;max-width:600px;margin:0 auto;">
-								<!-- YouTube video embed will go here -->
-								<div style="width:100%;height:0;padding-bottom:56.25%;position:relative;">
-									<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#444;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5em;">YouTube Video Coming Soon!</div>
-								</div>
-							</div>
-						</div>
-					</section>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#partslist">Parts</a></li>
+          <li><a href="#howtobuild">How to build</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#buythepc" class="button small">Buy / Contact</a></li>
+        </ul>
+      </nav>
 
-					<!-- Buy the PC -->
-					<section id="buythepc" class="wrapper style3 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Buy the PC</h2>
-								<p>Ready to get gaming? Click below to buy the full build or get help from our team!</p>
-							</header>
-							<ul class="actions special">
-								<li><a href="#" class="button primary">Buy Now (Coming Soon)</a></li>
-							</ul>
-						</div>
-					</section>
+      <button id="menu-btn" aria-label="open menu">☰</button>
+    </div>
+  </header>
 
-					<!-- CTA removed -->
+  <!-- Hero -->
+  <section id="banner" class="hero">
+    <div class="hero-inner container">
+      <h2 class="hero-title">The Starter Pro PC</h2>
+      <p class="hero-sub">Built for Fortnite & Valorant — learn to build it, game on it, and upgrade later.</p>
+      <div class="hero-ctas">
+        <a href="#partslist" class="button">See Parts</a>
+        <a href="#howtobuild" class="button ghost">Watch Build</a>
+      </div>
+      <div class="hero-floating-cards">
+        <div class="card small">Ryzen 5 7500F</div>
+        <div class="card small">RX 6750 XT</div>
+        <div class="card small">16GB DDR5</div>
+      </div>
+    </div>
+  </section>
 
-					<!-- Footer -->
-						<footer id="footer">
-							<ul class="icons">
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; 2025 Fortnite PC Builders</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</footer>
+  <!-- Parts List -->
+  <section id="partslist" class="section">
+    <div class="container reveal">
+      <header class="section-head">
+        <h3>Recommended AM5 Parts (Modern — budget friendly)</h3>
+        <p>Compatible AM5 build tuned for high FPS and easy upgrades.</p>
+      </header>
 
-			</div>
+      <div class="table-wrap">
+        <table class="parts-table">
+          <thead>
+            <tr><th>Part</th><th>Model (example)</th><th>Why this?</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>CPU</td><td>AMD Ryzen 5 7500F (AM5)</td><td>Great 6-core gaming CPU with strong single-core perf</td></tr>
+            <tr><td>GPU</td><td>AMD Radeon RX 6750 XT</td><td>Excellent 1080p/1440p fps for Fortnite/Valorant</td></tr>
+            <tr><td>Motherboard</td><td>B650 / B650M (AM5)</td><td>AM5 socket, good upgrade path, PCIe 4/5 options</td></tr>
+            <tr><td>RAM</td><td>16GB (2×8GB) DDR5-5200+</td><td>Fast memory for gaming and streaming</td></tr>
+            <tr><td>Storage</td><td>1TB NVMe SSD</td><td>Fast boot & game load times</td></tr>
+            <tr><td>CPU Cooler</td><td>Air cooler (e.g., Cooler Master Hyper 212) or 120mm AIO</td><td>7500F needs an aftermarket cooler</td></tr>
+            <tr><td>Power Supply</td><td>650W 80+ Gold</td><td>Reliable & future-proof for upgrades</td></tr>
+            <tr><td>Case</td><td>Mid Tower RGB (good airflow)</td><td>Looks cool and simple to build in</td></tr>
+            <tr><td>OS / Peripherals</td><td>Windows 11 / Monitor / KB / Mouse</td><td>Pick a 144Hz monitor for best experience</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      <p class="note">Want a partslinks list with prices? I can add links to stores (UK / EU / US) and estimated total.</p>
+    </div>
+  </section>
 
-	</body>
+  <!-- How to build (YouTube embed) -->
+  <section id="howtobuild" class="section alt-bg">
+    <div class="container reveal">
+      <header class="section-head">
+        <h3>How to Build — Step by Step</h3>
+        <p>Follow along with this clear video tutorial.</p>
+      </header>
+
+      <div class="video-wrap">
+        <!-- Responsive YouTube embed -->
+        <iframe src="https://www.youtube.com/embed/5inAIJ-jkQw"
+                title="How to Build PC"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section">
+    <div class="container reveal">
+      <header class="section-head">
+        <h3>Gallery</h3>
+        <p>Inspo for cases, RGB and setup layouts.</p>
+      </header>
+
+      <div class="gallery-grid">
+        <img src="images/banner.jpg" alt="Setup 1">
+        <img src="images/pic01.jpg" alt="Setup 2">
+        <img src="images/pic02.jpg" alt="Setup 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- Buy / Contact -->
+  <section id="buythepc" class="section cta-bg">
+    <div class="container reveal">
+      <header class="section-head">
+        <h3>Want me to build one for you?</h3>
+        <p>Fill the form — I'll reply with price & delivery options.</p>
+      </header>
+
+      <div class="form-grid">
+        <form id="contactForm">
+          <label>
+            Your name
+            <input type="text" id="name" required placeholder="Your name">
+          </label>
+          <label>
+            Email
+            <input type="email" id="email" required placeholder="you@example.com">
+          </label>
+          <label>
+            Discord / Gamertag
+            <input type="text" id="tag" placeholder="Discord#1234">
+          </label>
+          <label>
+            Message
+            <textarea id="message" rows="4" placeholder="Which city, budget, or questions?"></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="button">Contact me</button>
+            <button type="button" id="buyQuick" class="button ghost">Quick buy (email)</button>
+          </div>
+        </form>
+
+        <div class="buy-info">
+          <h4>Quick info</h4>
+          <ul>
+            <li>Example total (parts only): varies by region</li>
+            <li>Build + testing + warranty options available</li>
+            <li>Local pickup / shipping options</li>
+          </ul>
+          <p class="small">We don't store payment info — we'll send you a custom invoice after contact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="credits">© <span id="year"></span> PCs with Marakesh</div>
+      <div class="social">
+        <a href="#" aria-label="Twitter">Twitter</a> · <a href="#" aria-label="Instagram">Instagram</a> · <a href="mailto:you@example.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple scripts for animations & mailto form -->
+  <script>
+    // Show current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple reveal-on-scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Contact form -> open mail client with pre-filled email
+    function openMail(subject, body) {
+      const mail = `mailto:you@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mail;
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const tag  = document.getElementById('tag').value.trim();
+      const msg  = document.getElementById('message').value.trim();
+      const subject = `Build enquiry — ${name}`;
+      const body = `Name: ${name}\nEmail: ${email}\nDiscord/Tag: ${tag}\n\nMessage:\n${msg}`;
+      openMail(subject, body);
+    });
+
+    document.getElementById('buyQuick').addEventListener('click', () => {
+      const subject = 'Quick buy — Ryzen 5 7500F / RX 6750 XT build';
+      const body = 'I want to buy the starter build. Please send pricing & delivery options.\n\n(Write region and contact details here)';
+      openMail(subject, body);
+    });
+
+    // Mobile menu toggle (very small)
+    const menuBtn = document.getElementById('menu-btn');
+    menuBtn.addEventListener('click', () => {
+      document.body.classList.toggle('menu-open');
+    });
+  </script>
+</body>
 </html>
