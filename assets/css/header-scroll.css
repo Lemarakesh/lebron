@@ -1,0 +1,17 @@
+/* Default state for the header at the top of the page */
+#header {
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom-color: transparent;
+  /* Add a smooth transition for the changes */
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* State for the header once the user has scrolled down */
+#header.scrolled {
+  /* Re-apply the glassy background from the original stylesheet */
+  background: linear-gradient(180deg, rgba(6,12,18,0.6), rgba(6,12,18,0.25));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}

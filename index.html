@@ -6,10 +6,16 @@
   <title>Fortnite / Valorant Starter PC — PCs with Marakesh</title>
 
   <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet">
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Feature stylesheets -->
+  <link rel="stylesheet" href="assets/css/text-type.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
+  <link rel="stylesheet" href="assets/css/fps-estimator.css">
+  <link rel="stylesheet" href="assets/css/header-scroll.css">
 
   <meta name="description" content="Beginner-friendly gaming PC build for teens — Ryzen 5 7500F + RX 6750 XT. Parts list, gallery, and how-to video.">
 </head>
@@ -35,8 +41,7 @@
   <!-- Hero -->
   <section id="banner" class="hero">
     <div class="hero-inner container">
-      <h2 class="hero-title">The Starter Pro PC</h2>
-      <p class="hero-sub">Built for Fortnite & Valorant — learn to build it, game on it, and upgrade later.</p>
+      <div id="text-type-container" class="text-type-container"></div>
       <div class="hero-ctas">
         <a href="#partslist" class="button">See Parts</a>
         <a href="#howtobuild" class="button ghost">Watch Build</a>
@@ -78,6 +83,37 @@
 
       <p class="note">Want a partslinks list with prices? I can add links to stores (UK / EU / US) and estimated total.</p>
     </div>
+  </section>
+
+  <!-- FPS Estimator -->
+  <section id="fps-estimator" class="section alt-bg">
+      <div class="container reveal">
+          <header class="section-head">
+              <h3>Performance Estimates</h3>
+              <p>See the estimated FPS for popular games on High settings.</p>
+          </header>
+          <div class="fps-estimator-grid">
+              <div>
+                  <label for="fps-game-select">Game</label>
+                  <select id="fps-game-select">
+                      <option value="fortnite">Fortnite</option>
+                      <option value="valorant">Valorant</option>
+                      <option value="apex_legends">Apex Legends</option>
+                  </select>
+              </div>
+              <div>
+                  <label for="fps-resolution-select">Resolution</label>
+                  <select id="fps-resolution-select">
+                      <option value="1080p">1080p</option>
+                      <option value="1440p">1440p</option>
+                  </select>
+              </div>
+              <div class_="fps-result-container">
+                  <div id="fps-result"></div>
+                  <div class="fps-result-label">Estimated FPS</div>
+              </div>
+          </div>
+      </div>
   </section>
 
   <!-- How to build (YouTube embed) -->
@@ -171,23 +207,60 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/text-type.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/fps-estimator.js"></script>
+  <script src="assets/js/header-scroll.js"></script>
+
   <!-- Simple scripts for animations & mailto form -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // TextType animation
+      const textTypeElement = document.getElementById('text-type-container');
+      if (textTypeElement) {
+        new TextType(textTypeElement, {
+          text: ["The Starter Pro PC", "Built for Fortnite & Valorant", "Learn to build it, game on it, and upgrade later."],
+          typingSpeed: 75,
+          pauseDuration: 1500,
+          deletingSpeed: 50,
+          loop: true,
+        });
+      }
+
       // Show current year
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Simple reveal-on-scroll
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) e.target.classList.add('visible');
+      // Staggered reveal-on-scroll
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Find all direct children of the .reveal container
+            const children = entry.target.children;
+            
+            for (let i = 0; i < children.length; i++) {
+              const child = children[i];
+              // Add the base animation class
+              child.classList.add('reveal-child'); 
+              // Add the visible class with a delay
+              setTimeout(() => {
+                child.classList.add('visible');
+              }, i * 150); // 150ms stagger delay
+            }
+
+            // Stop observing the container once it has been animated
+            observer.unobserve(entry.target);
+          }
         });
-      }, {threshold: 0.12});
-      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+      }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+      });
 
       // Contact form -> open mail client with pre-filled email
       function openMail(subject, body) {
-
         const mail = `mailto:clancymarcos@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         window.location.href = mail;
       }
@@ -202,6 +275,7 @@
           const msg  = document.getElementById('message').value.trim();
           const subject = `Build enquiry — ${name}`;
           const body = `Name: ${name}\nEmail: ${email}\nDiscord/Tag: ${tag}\n\nMessage:\n${msg}`;
+          
           openMail(subject, body);
         });
       }
